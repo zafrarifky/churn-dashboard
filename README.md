@@ -5,7 +5,7 @@ Customer Churn is when customers stop using a business’s product or service an
 
 Customer churn is a prominent problem in the telecommunication industry due to the low switching costs and the abundance of alternative service providers. The telecommunication industry has access to a large amount of customer data compared to many other industries. This data can be used to derive massive insights relevant to customer churn and measures can be taken to reduce it.
 
-This project develops a web-based interactive dashboard for a given dataset for Chatterbox Telco Pvt Ltd in the Banana Republic to derive valuable insights from customer data to make decisions to reduce customer churn. Interactive dashboards provide real-time data visualizations in a manner that’s easy for stakeholders to comprehend and make decisions.
+This project develops a web-based interactive dashboard for a given dataset to derive valuable insights from customer data to make decisions to reduce customer churn. Interactive dashboards provide real-time data visualizations in a manner that’s easy for stakeholders to comprehend and make decisions.
 
 ## Approach followed 
 
