@@ -2,7 +2,7 @@
 dashboard to visualize and predict customer churn
 
 ## Problem Description
-Customer Churn is when customers stop using a business’s product or service and switch to products or services offered by the business’s competitors. This is a challenging issue for many businesses since it costs more to acquire new customers than to retain existing customers. This is because acquiring new customers requires the business to convince people to select their service over the existing competitors, while existing customers have already made their decision and no such convincing is necessary. Therefore, it is useful for businesses to analyze customer churn and find ways to reduce it. 
+Customer Churn is when customers stop using a business’s product or service and switch to products or services offered by the business’s competitors. This is a challenging issue for many businesses since it costs more to acquire new customers than to retain existing customers. Thus, it is useful for businesses to analyze customer churn and find ways to reduce it. 
 
 Customer churn is a prominent problem in the telecommunication industry due to the low switching costs and the abundance of alternative service providers. The telecommunication industry has access to a large amount of customer data compared to many other industries. This data can be used to derive massive insights relevant to customer churn and measures can be taken to reduce it.
 
