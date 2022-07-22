@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Churn Dashboard</title><link rel="icon" type="image/x-icon" href="../static/logo.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark" style="background-color: #426871">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../static/logo.png" alt="" width="70" height="35" class="d-inline-block align-text-top">
+                <h2 class="d-inline-block">Dashboard</h2>
+            </a>
+            <button type="button" class="btn d-flex" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" style="background-color:#D2B04C">
+                Check for Churn
+            </button>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"
+        style="overflow-y: initial !important">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #426871; text-align: center; color: white">
+                    <h5 class="modal-title" id="staticBackdropLabel">Check for Churn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                </div>
+                <div class="modal-body" style="height: 70vh; overflow-y: auto;">
+                    <div class="container-fluid">
+                        <form name="form" method="POST">
+                            Account Length: <input type="text" class="form-control" name="account_length" required />
+                            <br>
+                            Location Code:
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="location_code" id="location_code1"
+                                    value="452" required>
+                                <label class="form-check-label" for="location_code1">452</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="location_code" id="location_code2"
+                                    value="445">
+                                <label class="form-check-label" for="location_code2">445</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="location_code" id="location_code3"
+                                    value="547">
+                                <label class="form-check-label" for="location_code3">547</label>
+                            </div>
+                            <br>
+                            <br>
+                            International plan?
+                            <input type="radio" name="intertiol_plan" value="1" required>
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="intertiol_plan" value="0">
+                            <label for="no">No</label>
+                            <br><br>
+                            Voicemail plan?
+                            <input type="radio" name="voice_mail_plan" value="1" required>
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="voice_mail_plan" value="0">
+                            <label for="no">No</label>
+                            <br>
+                            No. of voicemail messages: <input type="number" class="form-control" name="number_vm_messages" required />
+                            <br>
+
+                            <h6>Daytime call info</h6>
+                            <div class="row">
+                                <div class="col">
+                                    Total daytime minutes:
+                                    <input type="text" class="form-control" name="total_day_min" required>
+                                </div>
+                                <div class="col">
+                                    Total daytime calls:
+                                    <input type="number" class="form-control" name="total_day_calls" required />
+                                </div>
+                                <div class="col">
+                                    Total daytime charge:
+                                    <input type="text" class="form-control" name="total_day_charge" required />
+                                </div>
+                            </div>
+                            <br>
+
+                            <h6>Evening call info</h6>
+                            <div class="row">
+                                <div class="col">
+                                    Total evening minutes:
+                                    <input type="text" class="form-control" name="total_eve_min" required>
+                                </div>
+                                <div class="col">
+                                    Total evening calls:
+                                    <input type="number" class="form-control" name="total_eve_calls" required />
+                                </div>
+                                <div class="col">
+                                    Total evening charge:
+                                    <input type="text" class="form-control" name="total_eve_charge" required />
+                                </div>
+                            </div>
+                            <br>
+
+                            <h6>Night call info</h6>
+                            <div class="row">
+                                <div class="col">
+                                    Total night minutes:
+                                    <input type="text" class="form-control" name="total_night_minutes" required>
+                                </div>
+                                <div class="col">
+                                    Total nighttime calls:
+                                    <input type="number" class="form-control" name="total_night_calls" required />
+                                </div>
+                                <div class="col">
+                                    Total night charge:
+                                    <input type="text" class="form-control" name="total_night_charge" required />
+                                </div>
+                            </div>
+                            <br>
+
+                            <h6>International call info</h6>
+                            <div class="row">
+                                <div class="col">
+                                    Total international minutes:
+                                    <input type="text" class="form-control" name="total_intl_minutes" required>
+                                </div>
+                                <div class="col">
+                                    Total international calls:
+                                    <input type="number" class="form-control" name="total_intl_calls" required />
+                                </div>
+                                <div class="col">
+                                    Total international charge:
+                                    <input type="text" class="form-control" name="total_intl_charge" required />
+                                </div>
+                            </div>
+                            <br>
+
+                            Customer Service Calls: <input type="number" class="form-control" name="customer_service_calls" required />
+                            <br>
+
+                            <div class="text-center">
+                                <button class="btn" style="background-color:#D2B04C" id="liveToastBtn" value="Submit" a href=”result.html”>Check for Churn</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="text-align: center">
+        <!-- <iframe title="dashboard_vis" width="1300" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiYTQxYzI1NDgtMzJlYi00NjEyLTg4ZTAtYTI1NzA0N2M0NTE3IiwidCI6ImFhYzBjNTY0LTZjNWUtNGIwNS04ZGMzLTQwODA4N2Y3N2Y3NiIsImMiOjEwfQ%3D%3D&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe> -->
+        <iframe title="dashboard_vis3 - Page 1" width="1300" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiMzIxZTVlNzctNmNlZi00MzQ0LWJhYWItNTBkNTFhMGExNDg2IiwidCI6ImFhYzBjNTY0LTZjNWUtNGIwNS04ZGMzLTQwODA4N2Y3N2Y3NiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

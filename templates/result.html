@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Churn Check Result</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark" style="background-color: #426871">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../static/logo.png" alt="" width="70" height="35" class="d-inline-block align-text-top">
+                <h2 class="d-inline-block">Dashboard</h2>
+            </a>
+        </div>
+    </nav>
+    <a href="/" class="previous">Back to Dashboard</a>
+
+
+    <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <img src="../static/churn.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div style="text-align: center;" id="content"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var x = "{{output}}";
+        var img;
+        var content;
+
+        if (x == 1) {
+            content = "<h2>Customer will Churn</h2>"
+        }
+        else {
+            content = "<h2>Customer will not Churn</h2>"
+        }
+
+        document.getElementById('content').insertAdjacentHTML('afterbegin', content);
+
+    </script>
+</body>
+
+</html>
